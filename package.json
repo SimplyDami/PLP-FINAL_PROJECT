@@ -1,0 +1,25 @@
+{
+  "name": "ilorin-ehospital-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "seed": "node scripts/seed.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^7.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  },
+  "description": "This backend provides a simple Express + MongoDB API for the Ilorin eHospital final year project.",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
