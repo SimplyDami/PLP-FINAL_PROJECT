@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Verification - Unilorin eHospital</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h2><a href="index.html">Unilorin eHospital</a></h2>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="login.html" class="nav-link">Login</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="form-container">
+            <div class="verification-content text-center">
+                <div class="verification-icon">
+                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#2ecc71" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                </div>
+
+                <h1 class="form-title">Verify Your Email Address</h1>
+
+                <div id="verification-pending">
+                    <p>We've sent a verification link to your email address:</p>
+                    <p class="email-address" id="user-email">user@example.com</p>
+                    <p>Please check your inbox and click the verification link to activate your account.</p>
+
+                    <div class="verification-actions">
+                        <button id="resend-verification" class="btn btn-outline">Resend Verification Email</button>
+                        <button id="change-email" class="btn btn-outline">Change Email Address</button>
+                    </div>
+
+                    <div class="verification-info">
+                        <p><strong>Didn't receive the email?</strong></p>
+                        <ul>
+                            <li>Check your spam or junk folder</li>
+                            <li>Make sure you entered the correct email address</li>
+                            <li>Wait a few minutes - it may take up to 5 minutes to arrive</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="verification-success" class="hidden">
+                    <div class="alert alert-success">
+                        <h3>Email Verified Successfully!</h3>
+                        <p>Your email address has been verified. You can now access your account.</p>
+                    </div>
+                    <a href="login.html" class="btn btn-primary">Proceed to Login</a>
+                </div>
+
+                <div id="verification-error" class="hidden">
+                    <div class="alert alert-error">
+                        <h3>Verification Failed</h3>
+                        <p>The verification link is invalid or has expired.</p>
+                    </div>
+                    <button id="request-new-verification" class="btn btn-primary">Request New Verification
+                        Email</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <p>&copy; 2026 University of Ilorin eHospital. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="email-verification.js"></script>
+</body>
+
+</html>

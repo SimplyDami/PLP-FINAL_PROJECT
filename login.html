@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Unilorin eHospital</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h2><a href="index.html">Unilorin eHospital</a></h2>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="signup.html" class="nav-link">Sign Up</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="form-container">
+            <h1 class="form-title">Login to Your Account</h1>
+
+            <!-- Role Selection -->
+            <div class="form-group">
+                <label for="role" class="form-label">Login As</label>
+                <select id="role" class="form-control">
+                    <option value="patient">Patient/Staff</option>
+                    <option value="doctor">Doctor</option>
+                </select>
+            </div>
+
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="idNumber" class="form-label" id="idLabel">Matric/Staff Number</label>
+                    <input type="text" id="idNumber" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" id="password" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <a href="#" id="forgot-password-link" class="text-link">Forgot Password?</a>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Login</button>
+                    <a href="signup.html" class="btn btn-outline">Create New Account</a>
+                </div>
+            </form>
+
+            <!-- Forgot Password Form -->
+            <div id="forgot-password-form" class="hidden mt-2">
+                <h3>Reset Password</h3>
+                <form id="reset-password-form">
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" id="email" class="form-control" required>
+                        <small class="form-text">Enter your registered email address</small>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Send Reset Link</button>
+                        <button type="button" id="cancel-reset" class="btn btn-outline">Cancel</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Reset Success Message -->
+            <div id="reset-success" class="hidden mt-2">
+                <div class="alert alert-success">
+                    Password reset instructions have been sent to your email address.
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <p>&copy; 2026 University of Ilorin eHospital. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="auth.js"></script>
+</body>
+
+</html>

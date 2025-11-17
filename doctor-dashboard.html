@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Dashboard - Unilorin eHospital</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h2><a href="index.html">Unilorin eHospital</a></h2>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" id="logout-btn" class="nav-link">Logout</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="dashboard">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <ul class="sidebar-menu">
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link active" data-section="overview">Dashboard Overview</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link" data-section="appointments">Appointments</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link" data-section="patients">Patient Information</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link" data-section="medical-records">Medical Records</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link" data-section="messages">Messages</a>
+                    </li>
+                </ul>
+            </aside>
+
+            <!-- Main Content -->
+            <div class="dashboard-content">
+                <!-- Dashboard Header -->
+                <div class="dashboard-header">
+                    <h1>Welcome, Dr. <span id="doctor-name">Adebayo</span>!</h1>
+                    <p>Doctor Dashboard - Manage your appointments and patients</p>
+                </div>
+
+                <!-- Overview Section -->
+                <section id="overview-section" class="dashboard-section">
+                    <div class="dashboard-cards">
+                        <div class="dashboard-card">
+                            <h3>Today's Appointments</h3>
+                            <div id="today-appointments">
+                                <p>3 appointments scheduled</p>
+                            </div>
+                            <a href="#" class="btn btn-outline mt-1" data-section="appointments">View All</a>
+                        </div>
+                        <div class="dashboard-card">
+                            <h3>Pending Consultations</h3>
+                            <p>2 patients waiting for consultation</p>
+                            <a href="#" class="btn btn-outline mt-1" data-section="patients">View Patients</a>
+                        </div>
+                        <div class="dashboard-card">
+                            <h3>Messages</h3>
+                            <div id="doctor-messages">
+                                <p>5 unread messages</p>
+                            </div>
+                            <a href="#" class="btn btn-outline mt-1" data-section="messages">View Messages</a>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-card mt-2">
+                        <h3>Quick Statistics</h3>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <span class="stat-number">24</span>
+                                <span class="stat-label">This Week</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">89</span>
+                                <span class="stat-label">This Month</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">95%</span>
+                                <span class="stat-label">Satisfaction Rate</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Appointments Section -->
+                <section id="appointments-section" class="dashboard-section hidden">
+                    <h2>Appointment Management</h2>
+
+                    <!-- Today's Appointments -->
+                    <div class="dashboard-card">
+                        <h3>Today's Schedule</h3>
+                        <div class="appointments-list">
+                            <div class="appointment-item">
+                                <div class="appointment-header">
+                                    <span class="patient-name">John Doe</span>
+                                    <span class="appointment-time">10:00 AM</span>
+                                </div>
+                                <div class="appointment-details">
+                                    <p><strong>Reason:</strong> Routine Checkup</p>
+                                    <p><strong>Status:</strong> <span class="status-confirmed">Confirmed</span></p>
+                                </div>
+                                <div class="appointment-actions">
+                                    <button class="btn btn-primary btn-sm start-consultation">Start
+                                        Consultation</button>
+                                    <button class="btn btn-outline btn-sm view-medical">View Records</button>
+                                </div>
+                            </div>
+
+                            <div class="appointment-item">
+                                <div class="appointment-header">
+                                    <span class="patient-name">Jane Smith</span>
+                                    <span class="appointment-time">11:30 AM</span>
+                                </div>
+                                <div class="appointment-details">
+                                    <p><strong>Reason:</strong> Fever and Headache</p>
+                                    <p><strong>Status:</strong> <span class="status-waiting">Waiting</span></p>
+                                </div>
+                                <div class="appointment-actions">
+                                    <button class="btn btn-primary btn-sm start-consultation">Start
+                                        Consultation</button>
+                                    <button class="btn btn-outline btn-sm view-medical">View Records</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Upcoming Appointments -->
+                    <div class="dashboard-card mt-2">
+                        <h3>Upcoming Appointments</h3>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Time</th>
+                                    <th>Patient</th>
+                                    <th>Reason</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Dec 16, 2024</td>
+                                    <td>09:00 AM</td>
+                                    <td>Michael Brown</td>
+                                    <td>Vaccination</td>
+                                    <td><span class="status-confirmed">Confirmed</span></td>
+                                    <td>
+                                        <button class="btn btn-outline btn-sm">View</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Dec 16, 2024</td>
+                                    <td>02:00 PM</td>
+                                    <td>Sarah Johnson</td>
+                                    <td>Dental Checkup</td>
+                                    <td><span class="status-pending">Pending</span></td>
+                                    <td>
+                                        <button class="btn btn-outline btn-sm">View</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Patients Section -->
+                <section id="patients-section" class="dashboard-section hidden">
+                    <h2>Patient Information</h2>
+
+                    <div class="dashboard-card">
+                        <h3>Current Patients</h3>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Patient ID</th>
+                                    <th>Name</th>
+                                    <th>Age</th>
+                                    <th>Last Visit</th>
+                                    <th>Medical Summary</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>PAT001</td>
+                                    <td>John Doe</td>
+                                    <td>25</td>
+                                    <td>Nov 15, 2024</td>
+                                    <td>Routine checkup - Healthy</td>
+                                    <td>
+                                        <button class="btn btn-outline btn-sm">View Full</button>
+                                        <button class="btn btn-primary btn-sm">Add Notes</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>PAT002</td>
+                                    <td>Jane Smith</td>
+                                    <td>22</td>
+                                    <td>Oct 30, 2024</td>
+                                    <td>Flu symptoms - Recovered</td>
+                                    <td>
+                                        <button class="btn btn-outline btn-sm">View Full</button>
+                                        <button class="btn btn-primary btn-sm">Add Notes</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Payment Receipts -->
+                    <div class="dashboard-card mt-2">
+                        <h3>Payment Receipts</h3>
+                        <div id="payment-receipts">
+                            <div class="receipt-item">
+                                <p><strong>Patient:</strong> John Doe</p>
+                                <p><strong>Date:</strong> December 15, 2024</p>
+                                <p><strong>Amount:</strong> ₦5,000</p>
+                                <p><strong>Status:</strong> <span class="status-paid">Paid</span></p>
+                                <button class="btn btn-outline btn-sm">View Receipt</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Medical Records Section -->
+                <section id="medical-records-section" class="dashboard-section hidden">
+                    <h2>Medical Records</h2>
+
+                    <div class="dashboard-card">
+                        <h3>Patient Medical Records</h3>
+                        <div class="search-bar">
+                            <input type="text" id="patient-search" class="form-control"
+                                placeholder="Search by patient name or ID...">
+                            <button class="btn btn-primary">Search</button>
+                        </div>
+
+                        <div class="medical-records-list mt-2">
+                            <!-- Medical records will be loaded here -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Messages Section -->
+                <section id="messages-section" class="dashboard-section hidden">
+                    <h2>Messages & Notifications</h2>
+
+                    <div class="dashboard-card">
+                        <div class="messages-list">
+                            <div class="message-item unread">
+                                <p><strong>From:</strong> Administration</p>
+                                <p><strong>Date:</strong> December 14, 2024</p>
+                                <p><strong>Subject:</strong> Staff Meeting Reminder</p>
+                                <p>Monthly staff meeting scheduled for December 20, 2024 at 3:00 PM.</p>
+                            </div>
+                            <div class="message-item">
+                                <p><strong>From:</strong> Pharmacy</p>
+                                <p><strong>Date:</strong> December 13, 2024</p>
+                                <p><strong>Subject:</strong> New Medication Available</p>
+                                <p>New batch of antibiotics has arrived and is available for prescription.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <p>&copy; 2026 University of Ilorin eHospital. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Doctor Dashboard JavaScript
+        document.addEventListener('DOMContentLoaded', function () {
+            // Navigation between dashboard sections
+            const sidebarLinks = document.querySelectorAll('.sidebar-link');
+            const dashboardSections = document.querySelectorAll('.dashboard-section');
+
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    // Remove active class from all links and sections
+                    sidebarLinks.forEach(l => l.classList.remove('active'));
+                    dashboardSections.forEach(s => s.classList.add('hidden'));
+
+                    // Add active class to clicked link
+                    this.classList.add('active');
+
+                    // Show corresponding section
+                    const sectionId = this.getAttribute('data-section') + '-section';
+                    document.getElementById(sectionId).classList.remove('hidden');
+                });
+            });
+
+            // Start consultation buttons
+            const startConsultationBtns = document.querySelectorAll('.start-consultation');
+            startConsultationBtns.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const patientName = this.closest('.appointment-item').querySelector('.patient-name').textContent;
+                    showAlert(`Starting consultation with ${patientName}`, 'success');
+                    // In a real application, this would open a consultation interface
+                });
+            });
+
+            // View medical records buttons
+            const viewMedicalBtns = document.querySelectorAll('.view-medical');
+            viewMedicalBtns.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const patientName = this.closest('.appointment-item').querySelector('.patient-name').textContent;
+                    showAlert(`Viewing medical records for ${patientName}`, 'success');
+                    // Navigate to medical records section
+                    sidebarLinks.forEach(l => l.classList.remove('active'));
+                    dashboardSections.forEach(s => s.classList.add('hidden'));
+                    document.querySelector('[data-section="medical-records"]').classList.add('active');
+                    document.getElementById('medical-records-section').classList.remove('hidden');
+                });
+            });
+
+            // Logout functionality
+            const logoutBtn = document.getElementById('logout-btn');
+            if (logoutBtn) {
+                logoutBtn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    if (confirm('Are you sure you want to logout?')) {
+                        window.location.href = 'index.html';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

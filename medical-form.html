@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Information - Unilorin eHospital</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h2><a href="index.html">Unilorin eHospital</a></h2>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="login.html" class="nav-link">Login</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="form-container">
+            <h1 class="form-title">Medical Information Form</h1>
+            <p class="text-center">Please complete your medical profile to continue</p>
+
+            <form id="medical-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="bloodGroup" class="form-label">Blood Group</label>
+                        <select id="bloodGroup" class="form-control" required>
+                            <option value="">Select Blood Group</option>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="genotype" class="form-label">Genotype</label>
+                        <select id="genotype" class="form-control" required>
+                            <option value="">Select Genotype</option>
+                            <option value="AA">AA</option>
+                            <option value="AS">AS</option>
+                            <option value="AC">AC</option>
+                            <option value="SS">SS</option>
+                            <option value="SC">SC</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="allergies" class="form-label">Allergies (if any)</label>
+                    <textarea id="allergies" class="form-control" rows="3"
+                        placeholder="List any allergies you have..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="conditions" class="form-label">Existing Medical Conditions</label>
+                    <textarea id="conditions" class="form-control" rows="3"
+                        placeholder="List any existing medical conditions..."></textarea>
+                </div>
+
+                <h3 class="mt-2">Emergency Contact Information</h3>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="emergencyName" class="form-label">Emergency Contact Name</label>
+                        <input type="text" id="emergencyName" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="emergencyPhone" class="form-label">Emergency Contact Phone</label>
+                        <input type="tel" id="emergencyPhone" class="form-control" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="emergencyRelationship" class="form-label">Relationship</label>
+                    <input type="text" id="emergencyRelationship" class="form-control" required
+                        placeholder="e.g., Parent, Spouse, Sibling">
+                </div>
+
+                <h3 class="mt-2">Next of Kin Information</h3>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nextOfKin" class="form-label">Next of Kin Full Name</label>
+                        <input type="text" id="nextOfKin" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="nextOfKinPhone" class="form-label">Next of Kin Phone</label>
+                        <input type="tel" id="nextOfKinPhone" class="form-control" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="nextOfKinAddress" class="form-label">Next of Kin Address</label>
+                    <textarea id="nextOfKinAddress" class="form-control" rows="3" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="symptoms" class="form-label">Current Symptoms (if any)</label>
+                    <textarea id="symptoms" class="form-control" rows="3"
+                        placeholder="Describe any current symptoms you're experiencing..."></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Save Medical Information</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <p>&copy; 2026 University of Ilorin eHospital. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="auth.js"></script>
+</body>
+
+</html>

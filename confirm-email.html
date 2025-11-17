@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Confirmation - Unilorin eHospital</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h2><a href="index.html">Unilorin eHospital</a></h2>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="login.html" class="nav-link">Login</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="form-container">
+            <div class="confirmation-content text-center">
+                <div id="processing-confirmation">
+                    <div class="confirmation-icon">
+                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#3498db" stroke-width="1.5">
+                            <path d="M12 2a10 10 0 0 1 7.38 16.75"></path>
+                            <path d="M12 6v6l4 2"></path>
+                        </svg>
+                    </div>
+                    <h1 class="form-title">Confirming Your Email</h1>
+                    <p>Please wait while we verify your email address...</p>
+                </div>
+
+                <div id="confirmation-success" class="hidden">
+                    <div class="confirmation-icon success">
+                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#2ecc71" stroke-width="1.5">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                    </div>
+                    <h2>Email Confirmed Successfully!</h2>
+                    <p>Your email address has been verified and your account is now active.</p>
+                    <div class="confirmation-actions">
+                        <a href="login.html" class="btn btn-primary">Proceed to Login</a>
+                    </div>
+                </div>
+
+                <div id="confirmation-error" class="hidden">
+                    <div class="confirmation-icon error">
+                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#e74c3c" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="15" y1="9" x2="9" y2="15"></line>
+                            <line x1="9" y1="9" x2="15" y2="15"></line>
+                        </svg>
+                    </div>
+                    <h2>Confirmation Failed</h2>
+                    <p id="error-message">The confirmation link is invalid or has expired.</p>
+                    <div class="confirmation-actions">
+                        <a href="email-confirmation.html" class="btn btn-primary">Request New Confirmation</a>
+                        <a href="signup.html" class="btn btn-outline">Create New Account</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <p>&copy; 2026 University of Ilorin eHospital. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="confirm-email.js"></script>
+</body>
+
+</html>

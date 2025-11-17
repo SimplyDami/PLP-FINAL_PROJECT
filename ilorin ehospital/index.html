@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eHospital - Comprehensive Healthcare Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="ehospital.css">
+</head>
+
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo" onclick="showPage('home')">
+                    <i class="fas fa-hospital"></i> eHospital
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="#" onclick="showPage('home')">Home</a></li>
+                    <li><a href="#" onclick="showPage('login')">Login</a></li>
+                    <li><a href="#" onclick="showPage('signup')">Sign Up</a></li>
+                    <li><a href="#" onclick="showPage('medical-form')">Medical Form</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Home Page -->
+    <div id="home" class="page active-page">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>Welcome to eHospital</h1>
+                <p>Your comprehensive healthcare management solution. Access medical services, book appointments, and
+                    manage your health records all in one place.</p>
+                <a href="#" class="btn btn-accent" onclick="showPage('signup')">Get Started</a>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="section features">
+            <div class="container">
+                <h2 class="section-title">Our Services</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-user-md"></i>
+                        <h3>Expert Doctors</h3>
+                        <p>Access to qualified healthcare professionals with years of experience.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-calendar-check"></i>
+                        <h3>Easy Appointments</h3>
+                        <p>Book, reschedule or cancel appointments with just a few clicks.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-file-medical"></i>
+                        <h3>Medical Records</h3>
+                        <p>Keep track of your medical history and access it anytime, anywhere.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Login Page -->
+    <div id="login" class="page">
+        <section class="section">
+            <div class="container">
+                <div class="form-container">
+                    <h2 class="form-title">Login to Your Account</h2>
+                    <form id="login-form">
+                        <div class="form-group">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" id="username" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" id="password" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn" style="width: 100%;">Login</button>
+                        </div>
+                        <div style="text-align: center;">
+                            <a href="#" onclick="alert('Password reset functionality would be implemented here')">Forgot
+                                Password?</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Sign Up Page -->
+    <div id="signup" class="page">
+        <section class="section">
+            <div class="container">
+                <div class="form-container">
+                    <h2 class="form-title">Create an Account</h2>
+                    <form id="signup-form">
+                        <div class="form-group">
+                            <label for="fullname" class="form-label">Full Name</label>
+                            <input type="text" id="fullname" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Gender</label>
+                            <div>
+                                <input type="radio" id="male" name="gender" value="male" required>
+                                <label for="male">Male</label>
+                                <input type="radio" id="female" name="gender" value="female" style="margin-left: 15px;">
+                                <label for="female">Female</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="dob" class="form-label">Date of Birth</label>
+                            <input type="date" id="dob" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="role" class="form-label">Role</label>
+                            <select id="role" class="form-control" required>
+                                <option value="">Select Role</option>
+                                <option value="student">Student</option>
+                                <option value="staff">Staff</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="idnumber" class="form-label">Matric/Staff Number</label>
+                            <input type="text" id="idnumber" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Phone</label>
+                            <input type="tel" id="phone" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="faculty" class="form-label">Faculty</label>
+                            <input type="text" id="faculty" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="department" class="form-label">Department</label>
+                            <input type="text" id="department" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signup-password" class="form-label">Create Password</label>
+                            <input type="password" id="signup-password" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn" style="width: 100%;">Sign Up</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Medical Form Page -->
+    <div id="medical-form" class="page">
+        <section class="section">
+            <div class="container">
+                <div class="form-container">
+                    <h2 class="form-title">Medical Information Form</h2>
+                    <form id="medical-form-form">
+                        <div class="form-group">
+                            <label for="blood-group" class="form-label">Blood Group</label>
+                            <select id="blood-group" class="form-control" required>
+                                <option value="">Select Blood Group</option>
+                                <option value="A+">A+</option>
+                                <option value="A-">A-</option>
+                                <option value="B+">B+</option>
+                                <option value="B-">B-</option>
+                                <option value="AB+">AB+</option>
+                                <option value="AB-">AB-</option>
+                                <option value="O+">O+</option>
+                                <option value="O-">O-</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="genotype" class="form-label">Genotype</label>
+                            <select id="genotype" class="form-control" required>
+                                <option value="">Select Genotype</option>
+                                <option value="AA">AA</option>
+                                <option value="AS">AS</option>
+                                <option value="SS">SS</option>
+                                <option value="AC">AC</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="allergies" class="form-label">Allergies (if any)</label>
+                            <textarea id="allergies" class="form-control" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="conditions" class="form-label">Medical Conditions (if any)</label>
+                            <textarea id="conditions" class="form-control" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="emergency-name" class="form-label">Emergency Contact Name</label>
+                            <input type="text" id="emergency-name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="emergency-phone" class="form-label">Emergency Contact Phone</label>
+                            <input type="tel" id="emergency-phone" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="emergency-relation" class="form-label">Relationship</label>
+                            <input type="text" id="emergency-relation" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="medical-password" class="form-label">Create Login Password</label>
+                            <input type="password" id="medical-password" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn" style="width: 100%;">Submit Medical Information</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Dashboard Page -->
+    <div id="dashboard" class="page">
+        <div class="dashboard">
+            <div class="sidebar">
+                <div class="user-info">
+                    <h3 id="user-greeting">Welcome, User</h3>
+                </div>
+                <ul class="sidebar-menu">
+                    <li><a href="#" onclick="showDashboardTab('profile')"><i class="fas fa-user"></i> View Profile</a>
+                    </li>
+                    <li><a href="#" onclick="showDashboardTab('appointment')"><i class="fas fa-calendar-check"></i> Book
+                            Appointment</a></li>
+                    <li><a href="#" onclick="showDashboardTab('records')"><i class="fas fa-file-medical"></i> Medical
+                            Records</a></li>
+                    <li><a href="#" onclick="showDashboardTab('messages')"><i class="fas fa-envelope"></i> Messages</a>
+                    </li>
+                    <li><a href="#" onclick="showPage('home')"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
+            </div>
+            <div class="main-content">
+                <div class="welcome-banner">
+                    <h2 id="dashboard-greeting">Welcome back, User!</h2>
+                    <p>You have <span id="appointment-count">2</span> upcoming appointments</p>
+                </div>
+
+                <!-- Profile Tab -->
+                <div id="profile-tab" class="dashboard-tab active-tab">
+                    <h3>Your Profile</h3>
+                    <div class="card">
+                        <div class="profile-info">
+                            <div class="info-row">
+                                <span class="info-label">Full Name:</span>
+                                <span id="profile-name" class="info-value">John Doe</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Email:</span>
+                                <span id="profile-email" class="info-value">john.doe@example.com</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Phone:</span>
+                                <span id="profile-phone" class="info-value">+1234567890</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Blood Group:</span>
+                                <span id="profile-blood" class="info-value">A+</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Genotype:</span>
+                                <span id="profile-genotype" class="info-value">AA</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Appointment Tab -->
+                <div id="appointment-tab" class="dashboard-tab">
+                    <h3>Book Appointment</h3>
+                    <div class="card">
+                        <form id="appointment-form">
+                            <div class="form-group">
+                                <label for="appointment-date" class="form-label">Date</label>
+                                <input type="date" id="appointment-date" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="appointment-time" class="form-label">Time</label>
+                                <input type="time" id="appointment-time" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="appointment-department" class="form-label">Department</label>
+                                <select id="appointment-department" class="form-control" required>
+                                    <option value="">Select Department</option>
+                                    <option value="cardiology">Cardiology</option>
+                                    <option value="neurology">Neurology</option>
+                                    <option value="pediatrics">Pediatrics</option>
+                                    <option value="orthopedics">Orthopedics</option>
+                                    <option value="dermatology">Dermatology</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn">Book Appointment</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <h3>Upcoming Appointments</h3>
+                    <div class="card">
+                        <div class="appointment-list">
+                            <div class="appointment-card">
+                                <div class="appointment-info">
+                                    <h4>Cardiology Consultation</h4>
+                                    <p><i class="far fa-calendar"></i> October 15, 2023</p>
+                                    <p><i class="far fa-clock"></i> 10:30 AM</p>
+                                    <p><i class="fas fa-stethoscope"></i> Dr. Sarah Johnson</p>
+                                </div>
+                                <div class="appointment-actions">
+                                    <button class="btn btn-accent">Reschedule</button>
+                                    <button class="btn btn-danger">Cancel</button>
+                                </div>
+                            </div>
+                            <div class="appointment-card">
+                                <div class="appointment-info">
+                                    <h4>Dermatology Checkup</h4>
+                                    <p><i class="far fa-calendar"></i> November 5, 2023</p>
+                                    <p><i class="far fa-clock"></i> 2:15 PM</p>
+                                    <p><i class="fas fa-stethoscope"></i> Dr. Michael Chen</p>
+                                </div>
+                                <div class="appointment-actions">
+                                    <button class="btn btn-accent">Reschedule</button>
+                                    <button class="btn btn-danger">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Medical Records Tab -->
+                <div id="records-tab" class="dashboard-tab">
+                    <h3>Medical Records</h3>
+                    <div class="card">
+                        <div class="records-list">
+                            <div class="record-item">
+                                <h4>Medical Checkup - October 10, 2023</h4>
+                                <p>General health checkup. All vitals normal.</p>
+                                <button class="btn">View Details</button>
+                            </div>
+                            <div class="record-item">
+                                <h4>Blood Test Results - September 28, 2023</h4>
+                                <p>Complete blood count. Results within normal range.</p>
+                                <button class="btn">View Details</button>
+                            </div>
+                            <div class="record-item">
+                                <h4>Vaccination Record - August 15, 2023</h4>
+                                <p>Influenza vaccine administered.</p>
+                                <button class="btn">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Messages Tab -->
+                <div id="messages-tab" class="dashboard-tab">
+                    <h3>Messages & Notifications</h3>
+                    <div class="card">
+                        <div class="messages-list">
+                            <div class="message-item unread">
+                                <h4>Appointment Reminder</h4>
+                                <p>Your appointment with Dr. Johnson is scheduled for tomorrow at 10:30 AM.</p>
+                                <span class="message-time">2 hours ago</span>
+                            </div>
+                            <div class="message-item">
+                                <h4>Lab Results Available</h4>
+                                <p>Your recent blood test results are now available in your medical records.</p>
+                                <span class="message-time">3 days ago</span>
+                            </div>
+                            <div class="message-item">
+                                <h4>Welcome to eHospital</h4>
+                                <p>Thank you for registering with eHospital. We're here to serve your healthcare needs.
+                                </p>
+                                <span class="message-time">1 week ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Page -->
+    <div id="admin" class="page">
+        <div class="admin-panel">
+            <div class="container">
+                <h2 class="section-title">Admin Dashboard</h2>
+
+                <div class="admin-tabs">
+                    <button class="admin-tab-btn active" onclick="showAdminTab('users')">Registered Users</button>
+                    <button class="admin-tab-btn" onclick="showAdminTab('medical-forms')">Medical Forms</button>
+                    <button class="admin-tab-btn" onclick="showAdminTab('appointments')">Appointments</button>
+                </div>
+
+                <div id="users-tab" class="admin-tab-content active-tab">
+                    <div class="card">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Role</th>
+                                    <th>ID Number</th>
+                                    <th>Email</th>
+                                    <th>Department</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>John Doe</td>
+                                    <td>Student</td>
+                                    <td>ST12345</td>
+                                    <td>john.doe@example.com</td>
+                                    <td>Computer Science</td>
+                                    <td>
+                                        <button class="btn">View</button>
+                                        <button class="btn btn-danger">Delete</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Jane Smith</td>
+                                    <td>Staff</td>
+                                    <td>SF67890</td>
+                                    <td>jane.smith@example.com</td>
+                                    <td>Administration</td>
+                                    <td>
+                                        <button class="btn">View</button>
+                                        <button class="btn btn-danger">Delete</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Robert Johnson</td>
+                                    <td>Student</td>
+                                    <td>ST24680</td>
+                                    <td>robert.j@example.com</td>
+                                    <td>Medicine</td>
+                                    <td>
+                                        <button class="btn">View</button>
+                                        <button class="btn btn-danger">Delete</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="medical-forms-tab" class="admin-tab-content">
+                    <div class="card">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Blood Group</th>
+                                    <th>Genotype</th>
+                                    <th>Allergies</th>
+                                    <th>Conditions</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>John Doe</td>
+                                    <td>A+</td>
+                                    <td>AA</td>
+                                    <td>None</td>
+                                    <td>None</td>
+                                    <td>
+                                        <button class="btn">View</button>
+                                        <button class="btn btn-danger">Delete</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Jane Smith</td>
+                                    <td>O+</td>
+                                    <td>AS</td>
+                                    <td>Penicillin</td>
+                                    <td>Hypertension</td>
+                                    <td>
+                                        <button class="btn">View</button>
+                                        <button class="btn btn-danger">Delete</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="appointments-tab" class="admin-tab-content">
+                    <div class="card">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Patient</th>
+                                    <th>Department</th>
+                                    <th>Date</th>
+                                    <th>Time</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>John Doe</td>
+                                    <td>Cardiology</td>
+                                    <td>2023-10-15</td>
+                                    <td>10:30 AM</td>
+                                    <td>Confirmed</td>
+                                    <td>
+                                        <button class="btn">View</button>
+                                        <button class="btn btn-accent">Reschedule</button>
+                                        <button class="btn btn-danger">Cancel</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Jane Smith</td>
+                                    <td>Dermatology</td>
+                                    <td>2023-10-16</td>
+                                    <td>2:00 PM</td>
+                                    <td>Pending</td>
+                                    <td>
+                                        <button class="btn">View</button>
+                                        <button class="btn btn-accent">Reschedule</button>
+                                        <button class="btn btn-danger">Cancel</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About eHospital</h3>
+                    <p>eHospital is a comprehensive healthcare management system designed to provide seamless medical
+                        services to students and staff.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#" onclick="showPage('home')">Home</a></li>
+                        <li><a href="#" onclick="showPage('login')">Login</a></li>
+                        <li><a href="#" onclick="showPage('signup')">Sign Up</a></li>
+                        <li><a href="#" onclick="showPage('medical-form')">Medical Form</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Medical Drive, Health City</p>
+                    <p><i class="fas fa-phone"></i> +1 (234) 567-8900</p>
+                    <p><i class="fas fa-envelope"></i> info@ehospital.com</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 eHospital. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- External JavaScript -->
+    <script src="ehospital.js"></script>
+</body>
+
+</html>

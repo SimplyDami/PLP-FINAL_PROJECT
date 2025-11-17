@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Dashboard - Unilorin eHospital</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h2><a href="index.html">Unilorin eHospital</a></h2>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" id="logout-btn" class="nav-link">Logout</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="dashboard">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <ul class="sidebar-menu">
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link active" data-section="overview">Dashboard Overview</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link" data-section="profile">View Profile</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link" data-section="appointments">Book Appointment</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link" data-section="medical-records">Medical Records</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link" data-section="messages">Messages</a>
+                    </li>
+                </ul>
+            </aside>
+
+            <!-- Main Content -->
+            <div class="dashboard-content">
+                <!-- Dashboard Header -->
+                <div class="dashboard-header">
+                    <h1>Welcome, <span id="user-name">John Doe</span>!</h1>
+                    <p>Here's your healthcare dashboard</p>
+                </div>
+
+                <!-- Overview Section -->
+                <section id="overview-section" class="dashboard-section">
+                    <div class="dashboard-cards">
+                        <div class="dashboard-card">
+                            <h3>Upcoming Appointments</h3>
+                            <div id="upcoming-appointments">
+                                <p>No upcoming appointments</p>
+                            </div>
+                            <a href="#" class="btn btn-outline mt-1" data-section="appointments">Book Appointment</a>
+                        </div>
+                        <div class="dashboard-card">
+                            <h3>Medical Records</h3>
+                            <p>View your medical history and test results</p>
+                            <a href="#" class="btn btn-outline mt-1" data-section="medical-records">View Records</a>
+                        </div>
+                        <div class="dashboard-card">
+                            <h3>Messages</h3>
+                            <div id="unread-messages">
+                                <p>No new messages</p>
+                            </div>
+                            <a href="#" class="btn btn-outline mt-1" data-section="messages">View Messages</a>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-card mt-2">
+                        <h3>Quick Actions</h3>
+                        <div class="quick-actions">
+                            <button class="btn btn-primary" data-section="appointments">Book Appointment</button>
+                            <button class="btn btn-outline" data-section="medical-records">View Medical History</button>
+                            <button class="btn btn-outline" data-section="profile">Update Profile</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Profile Section -->
+                <section id="profile-section" class="dashboard-section hidden">
+                    <h2>My Profile</h2>
+                    <div class="dashboard-card">
+                        <div id="profile-info">
+                            <!-- Profile information will be loaded here -->
+                        </div>
+                        <button class="btn btn-outline mt-1" id="edit-profile-btn">Edit Profile</button>
+                    </div>
+                </section>
+
+                <!-- Appointments Section -->
+                <section id="appointments-section" class="dashboard-section hidden">
+                    <h2>Appointments</h2>
+
+                    <!-- Book Appointment Form -->
+                    <div class="dashboard-card">
+                        <h3>Book New Appointment</h3>
+                        <form id="book-appointment-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="appointment-date" class="form-label">Date</label>
+                                    <input type="date" id="appointment-date" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="appointment-time" class="form-label">Time</label>
+                                    <select id="appointment-time" class="form-control" required>
+                                        <option value="">Select Time</option>
+                                        <option value="09:00">09:00 AM</option>
+                                        <option value="10:00">10:00 AM</option>
+                                        <option value="11:00">11:00 AM</option>
+                                        <option value="12:00">12:00 PM</option>
+                                        <option value="14:00">02:00 PM</option>
+                                        <option value="15:00">03:00 PM</option>
+                                        <option value="16:00">04:00 PM</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="appointment-department" class="form-label">Department</label>
+                                <select id="appointment-department" class="form-control" required>
+                                    <option value="">Select Department</option>
+                                    <option value="general">General Medicine</option>
+                                    <option value="cardiology">Cardiology</option>
+                                    <option value="pediatrics">Pediatrics</option>
+                                    <option value="surgery">Surgery</option>
+                                    <option value="orthopedics">Orthopedics</option>
+                                    <option value="dentistry">Dentistry</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="appointment-reason" class="form-label">Reason for Visit</label>
+                                <textarea id="appointment-reason" class="form-control" rows="3" required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Proceed to Payment</button>
+                        </form>
+                    </div>
+
+                    <!-- Upcoming Appointments -->
+                    <div class="dashboard-card mt-2">
+                        <h3>Upcoming Appointments</h3>
+                        <div id="appointments-list">
+                            <!-- Appointments will be loaded here -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Medical Records Section -->
+                <section id="medical-records-section" class="dashboard-section hidden">
+                    <h2>Medical Records</h2>
+                    <div class="dashboard-card">
+                        <div id="medical-records-list">
+                            <!-- Medical records will be loaded here -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Messages Section -->
+                <section id="messages-section" class="dashboard-section hidden">
+                    <h2>Messages & Notifications</h2>
+                    <div class="dashboard-card">
+                        <div id="messages-list">
+                            <!-- Messages will be loaded here -->
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <p>&copy; 2026 University of Ilorin eHospital. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Confirmation - Unilorin eHospital</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            line-height: 1.6;
+        }
+
+        .navbar {
+            background: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo h2 {
+            color: #1a5276;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .confirmation-box {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .email-icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #1a5276;
+            margin-bottom: 20px;
+        }
+
+        .email-address {
+            background: #e8f4fd;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            font-weight: bold;
+            color: #1a5276;
+        }
+
+        .confirmation-link {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border: 2px dashed #3498db;
+        }
+
+        .confirmation-link a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+            word-break: break-all;
+            display: block;
+            margin: 10px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #1a5276;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn-secondary {
+            background: #3498db;
+        }
+
+        .btn-success {
+            background: #27ae60;
+        }
+
+        .steps {
+            text-align: left;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
+
+        .steps ol {
+            margin-left: 20px;
+        }
+
+        .steps li {
+            margin: 10px 0;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Unilorin eHospital</h2>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" style="color: #333; text-decoration: none; margin-left: 20px;">Home</a>
+                <a href="login.html" style="color: #333; text-decoration: none; margin-left: 20px;">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="confirmation-box">
+            <!-- Step 1: Show Confirmation Link -->
+            <div id="step1">
+                <div class="email-icon">📧</div>
+                <h1>Verify Your Email Address</h1>
+
+                <p>We need to verify your email address:</p>
+                <div class="email-address" id="userEmail">user@example.com</div>
+
+                <div class="confirmation-link">
+                    <p><strong>Click this link to verify your email:</strong></p>
+                    <a href="#"
+                        id="verificationLink">https://ehospital.unilorin.edu.ng/confirm-email.html?token=abc123</a>
+                </div>
+
+                <div class="steps">
+                    <h3>Simple Steps:</h3>
+                    <ol>
+                        <li>Click the verification link above</li>
+                        <li>Your email will be confirmed automatically</li>
+                        <li>You can then login to your account</li>
+                    </ol>
+                </div>
+
+                <div>
+                    <button class="btn btn-success" onclick="verifyEmail()">✅ Click Here to Verify Email</button>
+                    <button class="btn btn-secondary" onclick="copyLink()">📋 Copy Verification Link</button>
+                </div>
+
+                <p style="margin-top: 20px; color: #666;">
+                    <small>This is a simulation. In real life, this link would be sent to your email.</small>
+                </p>
+            </div>
+
+            <!-- Step 2: Show Success -->
+            <div id="step2" class="hidden">
+                <div class="email-icon" style="color: #27ae60;">✅</div>
+                <h1>Email Verified Successfully!</h1>
+
+                <div class="success-message">
+                    <p><strong>🎉 Congratulations! Your email has been verified.</strong></p>
+                    <p>Your account is now active and ready to use.</p>
+                </div>
+
+                <div class="steps">
+                    <h3>What's Next?</h3>
+                    <ul>
+                        <li>Login to your account</li>
+                        <li>Complete your medical profile</li>
+                        <li>Book appointments with doctors</li>
+                        <li>Access your medical records</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <a href="login.html" class="btn btn-success">🚀 Proceed to Login</a>
+                    <a href="index.html" class="btn">🏠 Go to Homepage</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Get user data from URL or localStorage
+        const urlParams = new URLSearchParams(window.location.search);
+        let userEmail = urlParams.get('email');
+
+        // If no email in URL, try to get from localStorage
+        if (!userEmail) {
+            userEmail = localStorage.getItem('userEmail') || 'student@unilorin.edu.ng';
+        }
+
+        // Generate a verification link
+        const verificationLink = `confirm-email.html?email=${encodeURIComponent(userEmail)}&verified=true`;
+
+        // Display user email and link
+        document.getElementById('userEmail').textContent = userEmail;
+        document.getElementById('verificationLink').href = verificationLink;
+        document.getElementById('verificationLink').textContent = window.location.origin + '/' + verificationLink;
+
+        // Check if user is coming from verification
+        if (urlParams.get('verified') === 'true') {
+            showSuccess();
+        }
+
+        function verifyEmail() {
+            // Mark email as verified in localStorage
+            localStorage.setItem('verifiedEmail', userEmail);
+            localStorage.setItem('isEmailVerified', 'true');
+
+            // Show success message
+            showSuccess();
+        }
+
+        function showSuccess() {
+            document.getElementById('step1').classList.add('hidden');
+            document.getElementById('step2').classList.remove('hidden');
+        }
+
+        function copyLink() {
+            const link = document.getElementById('verificationLink').href;
+            navigator.clipboard.writeText(link).then(() => {
+                alert('✅ Verification link copied to clipboard!');
+            });
+        }
+
+        // Save user email for later use
+        localStorage.setItem('userEmail', userEmail);
+    </script>
+</body>
+
+</html>

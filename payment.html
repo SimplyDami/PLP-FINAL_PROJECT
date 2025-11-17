@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - Unilorin eHospital</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h2><a href="index.html">Unilorin eHospital</a></h2>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="dashboard.html" class="nav-link">Dashboard</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1 class="form-title">Payment</h1>
+
+            <div class="payment-container">
+                <!-- Appointment Summary -->
+                <div class="appointment-summary">
+                    <h2>Appointment Summary</h2>
+                    <div id="appointment-details">
+                        <!-- Appointment details will be loaded here -->
+                    </div>
+                </div>
+
+                <!-- Payment Methods -->
+                <div class="payment-methods">
+                    <h2>Select Payment Method</h2>
+
+                    <div class="payment-options">
+                        <div class="payment-option">
+                            <input type="radio" id="paystack" name="payment-method" value="paystack" checked>
+                            <label for="paystack">
+                                <img src="assets/images/paystack-logo.png" alt="Paystack" class="payment-logo">
+                                <span>Paystack</span>
+                            </label>
+                        </div>
+
+                        <div class="payment-option">
+                            <input type="radio" id="remita" name="payment-method" value="remita">
+                            <label for="remita">
+                                <img src="assets/images/remita-logo.png" alt="Remita" class="payment-logo">
+                                <span>Remita</span>
+                            </label>
+                        </div>
+
+                        <div class="payment-option">
+                            <input type="radio" id="bank-transfer" name="payment-method" value="bank-transfer">
+                            <label for="bank-transfer">
+                                <span>Bank Transfer</span>
+                            </label>
+                        </div>
+
+                        <div class="payment-option">
+                            <input type="radio" id="card" name="payment-method" value="card">
+                            <label for="card">
+                                <span>Credit/Debit Card</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Payment Form -->
+                    <form id="payment-form">
+                        <!-- Card Payment Details (shown when card is selected) -->
+                        <div id="card-details" class="payment-details hidden">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="card-number" class="form-label">Card Number</label>
+                                    <input type="text" id="card-number" class="form-control"
+                                        placeholder="1234 5678 9012 3456">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="expiry-date" class="form-label">Expiry Date</label>
+                                    <input type="text" id="expiry-date" class="form-control" placeholder="MM/YY">
+                                </div>
+                                <div class="form-group">
+                                    <label for="cvv" class="form-label">CVV</label>
+                                    <input type="text" id="cvv" class="form-control" placeholder="123">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="card-name" class="form-label">Name on Card</label>
+                                <input type="text" id="card-name" class="form-control">
+                            </div>
+                        </div>
+
+                        <!-- Bank Transfer Details (shown when bank transfer is selected) -->
+                        <div id="bank-details" class="payment-details hidden">
+                            <div class="bank-info">
+                                <h4>Bank Transfer Instructions</h4>
+                                <p><strong>Bank:</strong> First Bank of Nigeria</p>
+                                <p><strong>Account Name:</strong> University of Ilorin eHospital</p>
+                                <p><strong>Account Number:</strong> 305 123 4567</p>
+                                <p><strong>Reference:</strong> <span id="payment-reference"></span></p>
+                                <p>Please use the reference number above when making the transfer.</p>
+                            </div>
+                        </div>
+
+                        <div class="payment-summary">
+                            <h3>Payment Summary</h3>
+                            <div class="summary-item">
+                                <span>Consultation Fee:</span>
+                                <span id="summary-fee">₦0</span>
+                            </div>
+                            <div class="summary-item">
+                                <span>Service Charge:</span>
+                                <span>₦100</span>
+                            </div>
+                            <div class="summary-total">
+                                <span>Total Amount:</span>
+                                <span id="summary-total">₦0</span>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary" id="make-payment">Make Payment</button>
+                            <a href="appointment.html" class="btn btn-outline">Back to Appointment</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <p>&copy; 2026 University of Ilorin eHospital. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="payment.js"></script>
+</body>
+
+</html>
